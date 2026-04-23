@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crime Map</title>
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+    <!-- Your CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <h1>Delhi Crime Map</h1>
+
+    <!-- Filter -->
+    <div class="filter-box">
+        <label>Filter Crime:</label>
+        <select id="crimeFilter" onchange="loadData()">
+            <option value="">All</option>
+            <option value="Harassment">Harassment</option>
+            <option value="Stalking">Stalking</option>
+            <option value="Assault">Assault</option>
+            <option value="Domestic Violence">Domestic Violence</option>
+        </select>
+    </div>
+
+    <!-- Map -->
+    <div id="map"></div>
+
+    <!-- Navigation -->
+    <div class="nav">
+        <a href="/report">Report Crime</a>
+        <a href="/logout">Logout</a>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.heat/dist/leaflet-heat.js"></script>
+
+    <script>
+        let map;
+        let markers = [];
+        let heatLayer;
+
+        function initMap() {
+            map = L.map('map').setView([28.6139, 77.2090], 11);
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap'
+            }).addTo(map);
+
+            loadData();
+        }
+
+        function loadData() {
+            if (!map) return;
+
+            // clear markers
+            markers.forEach(m => map.removeLayer(m));
+            markers = [];
+
+            // clear heatmap
+            if (heatLayer) {
+                map.removeLayer(heatLayer);
+            }
+
+            const selectedCrime = document.getElementById("crimeFilter").value;
+
+            let url = "/data";
+            if (selectedCrime) {
+                url += "?crime_type=" + selectedCrime;
+            }
+
+            fetch(url)
+                .then(res => res.json())
+                .then(data => {
+
+                    let heatPoints = [];
+
+                    data.forEach(item => {
+                        if (!item.latitude || !item.longitude) return;
+
+                        // marker
+                        let marker = L.marker([item.latitude, item.longitude])
+                            .addTo(map)
+                            .bindPopup(`
+                                <b>Area:</b> ${item.area || item.location}<br>
+                                <b>Crime:</b> ${item.crime_type}<br>
+                                <b>Time:</b> ${item.hour}:00
+                            `);
+
+                        markers.push(marker);
+
+                        // heatmap points (HIGH intensity)
+                        heatPoints.push([item.latitude, item.longitude, 1]);
+                    });
+
+                    console.log("Heat Points:", heatPoints); // debug
+
+                    // heatmap layer
+                    heatLayer = L.heatLayer(heatPoints, {
+                        radius: 35,
+                        blur: 25,
+                        maxZoom: 17,
+                        gradient: {
+                            0.2: '#ffc1cc',
+                            0.4: '#ff69b4',
+                            0.6: '#ff1493',
+                            0.8: '#d81b60',
+                            1.0: '#880e4f'
+                        }
+                    }).addTo(map);
+                });
+        }
+
+        window.onload = initMap;
+    </script>
+
+</body>
+</html>
