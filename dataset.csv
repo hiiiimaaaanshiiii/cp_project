@@ -1,0 +1,51 @@
+latitude,longitude,area,crime_type,hour
+28.5245,77.2066,Saket,Harassment,21
+28.6328,77.2197,Connaught Place,Stalking,22
+28.7041,77.1025,Rohini,Assault,20
+28.5355,77.3910,Mayur Vihar,Harassment,19
+28.5562,77.1000,Dwarka,Assault,20
+28.6519,77.2315,Karol Bagh,Harassment,18
+28.6690,77.2950,Shahdara,Stalking,22
+28.5823,77.3120,New Ashok Nagar,Harassment,21
+28.7290,77.0910,Outer Rohini,Assault,23
+28.5350,77.2420,Lajpat Nagar,Harassment,20
+28.6100,77.2300,Central Delhi,Stalking,21
+28.6400,77.2100,Patel Nagar,Harassment,19
+28.6700,77.2200,Civil Lines,Assault,22
+28.5900,77.2500,Jangpura,Harassment,20
+28.5500,77.3000,Noida Border,Stalking,23
+28.7200,77.1100,Prashant Vihar,Harassment,21
+28.7000,77.2800,Dilshad Garden,Assault,22
+28.6600,77.2000,Subzi Mandi,Harassment,18
+28.6300,77.2400,ITO,Stalking,21
+28.6000,77.2700,Akshardham,Harassment,20
+28.5700,77.2100,Hauz Khas,Stalking,22
+28.5400,77.2600,Okhla,Assault,23
+28.7500,77.1200,Narela,Harassment,19
+28.6900,77.1500,Model Town,Stalking,21
+28.5800,77.3300,Noida Sector 15,Harassment,22
+28.6200,77.3000,Preet Vihar,Assault,20
+28.6100,77.2800,IP Extension,Harassment,21
+28.5300,77.2800,Kalkaji,Stalking,22
+28.5200,77.2500,Greater Kailash,Harassment,20
+28.5000,77.3000,Badarpur,Assault,23
+28.7100,77.1700,Azadpur,Harassment,19
+28.6800,77.2500,Seelampur,Stalking,22
+28.6400,77.2700,Laxmi Nagar,Harassment,21
+28.6700,77.2600,Krishna Nagar,Assault,20
+28.6000,77.2200,Janpath,Harassment,21
+28.5800,77.2000,Green Park,Stalking,22
+28.5500,77.1800,Malviya Nagar,Harassment,20
+28.5300,77.2200,Nehru Place,Assault,21
+28.5100,77.2700,Tughlakabad,Harassment,23
+28.7400,77.1000,Bawana,Stalking,20
+28.7200,77.2000,Wazirabad,Harassment,21
+28.7000,77.3000,Shahdara Border,Assault,22
+28.6500,77.1800,Shalimar Bagh,Harassment,19
+28.6300,77.1600,Rajouri Garden,Stalking,21
+28.6200,77.1400,Janakpuri,Harassment,20
+28.6000,77.1300,Uttam Nagar,Assault,22
+28.5800,77.1200,Dwarka Sector 21,Harassment,21
+28.5600,77.1100,Dwarka Mor,Stalking,20
+28.5400,77.1000,Palam,Harassment,19
+28.5200,77.0900,Najafgarh,Assault,22
