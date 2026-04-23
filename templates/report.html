@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Report Crime</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <h2>Report an Incident</h2>
+
+    <form method="POST">
+        <!-- CSRF protection -->
+        {{ form.hidden_tag() }}
+
+        <p>
+            {{ form.location.label }}<br>
+            {{ form.location() }}
+        </p>
+
+        <p>
+            {{ form.crime_type.label }}<br>
+            {{ form.crime_type() }}
+        </p>
+
+        <p>
+            {{ form.submit() }}
+        </p>
+    </form>
+
+    <br>
+
+    <!-- Navigation -->
+    <a href="/">Back to Map</a> |
+    <a href="/logout">Logout</a>
+
+</body>
+</html>

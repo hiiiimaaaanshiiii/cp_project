@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <h2>Login</h2>
+
+    <form method="POST">
+        <!-- CSRF token (VERY IMPORTANT) -->
+        {{ form.hidden_tag() }}
+
+        <p>
+            {{ form.username.label }}<br>
+            {{ form.username() }}
+        </p>
+
+        <p>
+            {{ form.password.label }}<br>
+            {{ form.password() }}
+        </p>
+
+        <p>
+            {{ form.submit() }}
+        </p>
+    </form>
+
+    <br>
+
+    <!-- Link to signup -->
+    <p>
+        Don't have an account?
+        <a href="/signup">Sign Up</a>
+    </p>
+
+</body>
+</html>
