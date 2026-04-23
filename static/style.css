@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Body */
+body {
+    background-color: #f4f6f9;   /* simple matte background */
+    color: #333;
+    padding: 20px;
+}
+
+/* Heading */
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 32px;
+}
+
+/* Filter section */
+.filter-box {
+    width: 60%;
+    margin: 0 auto 20px auto;
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+select {
+    padding: 8px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Map */
+#map {
+    width: 90%;
+    height: 550px;
+    margin: auto;
+    border-radius: 10px;
+    border: 2px solid #ddd;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Navigation */
+.nav {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.nav a {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.nav a:hover {
+    background-color: #2980b9;
+}
+
+/* Forms */
+form {
+    width: 50%;
+    margin: 30px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Buttons */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #27ae60;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .filter-box,
+    form {
+        width: 90%;
+    }
+
+    #map {
+        width: 100%;
+        height: 400px;
+    }
+}
